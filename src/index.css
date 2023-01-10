@@ -4,6 +4,7 @@
   margin: 0;
   font-family: "Quicksand";
   color: #333;
+  text-decoration: none;
 }
 
 .loading-message {
@@ -38,9 +39,6 @@ h1 {
   color: #f1356d;
   margin-bottom: 8px;
 }
-.article-preview a {
-  text-decoration: none;
-}
 
 /* Navbar styles */
 
@@ -64,4 +62,10 @@ h1 {
 }
 .navbar a:hover {
   color: #f1356d;
+}
+
+/* Single article styles */
+
+.single-article h2 {
+  margin-bottom: 20px;
 }
