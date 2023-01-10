@@ -1,12 +1,22 @@
-import './App.css';
-import ArticlesList from './components/ArticlesList';
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import "./App.css";
+import ArticlesList from "./components/ArticlesList";
+import Header from "./components/Header";
+import Navbar from "./components/Navbar";
 
 function App() {
   return (
-    <div className="App">
-     <h1>This is the main page</h1>
-     <ArticlesList />
-    </div>
+    <BrowserRouter>
+      <div className="App">
+        <Header />
+        <Navbar />
+        <div className="content">
+          <Routes>
+            <Route path="/" element={<ArticlesList />} />
+          </Routes>
+        </div>
+      </div>
+    </BrowserRouter>
   );
 }
 
