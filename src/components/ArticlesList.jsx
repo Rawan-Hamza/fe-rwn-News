@@ -3,12 +3,15 @@ import { fetchArticles } from "./Api";
 
 const ArticlesList = () => {
   const [articlesList, setArticlesList] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     fetchArticles().then((data) => {
       setArticlesList(data);
+      setIsLoading(false);
     });
   }, []);
+  if (isLoading) return <p className="loading-message">Loading ...</p>;
   return (
     <div className="articles-list">
       {articlesList.map((article) => (
