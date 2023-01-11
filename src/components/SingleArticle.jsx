@@ -20,7 +20,7 @@ const SingleArticle = () => {
   return (
     <div className="single-article">
       <h2>{article.title}</h2>
-      <p>{article.body}</p>
+      <p className="article-body">{article.body}</p>
       <Votes votes={article.votes} article_id={article_id} />
       <Comments article_id={article_id} />
     </div>
