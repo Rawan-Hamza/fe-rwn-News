@@ -76,9 +76,56 @@ h1 {
 }
 
 /* comments styles */
-.comments h3{
+.comments h3 {
   margin-bottom: 15px;
 }
 .comment-body {
-  font-size: 0.80rem;
+  font-size: 0.8rem;
+}
+
+/* vote styles */
+.vote {
+  display: block;
+  float: right;
+  text-align: center;
+  margin-left: 1.7rem;
+  margin-bottom: 2rem;
+}
+
+.error-message {
+  color: red;
+}
+/* button styles */
+
+.vote .vote-button {
+  background-color: #ffffff;
+  border: 0;
+  border-radius: 0.5rem;
+  box-sizing: border-box;
+  color: #111827;
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 1.25rem;
+  padding: 0.75rem 1rem;
+  text-align: center;
+  text-decoration: none #d1d5db solid;
+  text-decoration-thickness: auto;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.vote-button:hover {
+  background-color: rgb(249, 250, 251);
+}
+
+.vote-button:focus {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
+.vote-button:focus-visible {
+  box-shadow: none;
 }
