@@ -4,10 +4,11 @@ import { fetchArticleById } from "./Api";
 import Comments from "./Comments";
 
 
+
 const SingleArticle = () => {
   const [article, setArticle] = useState({});
   const { article_id } = useParams();
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(true)
 
   useEffect(() => {
     fetchArticleById(article_id).then((data) => {

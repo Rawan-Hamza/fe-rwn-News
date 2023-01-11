@@ -10,11 +10,12 @@ const Comments = ({article_id}) => {
             setComments(data.comments)
             setIsLoading(false)
         })
-    })
+    }, [])
     
     return ( 
         <div className="comments">
             <h3>Comments:</h3>
+            {!comments && <p>This article has no comments yet</p>}
             {isLoading && <p>is Loading...</p>}
             {comments && comments.map((comment) => (
                 <div key={comment.id}>
