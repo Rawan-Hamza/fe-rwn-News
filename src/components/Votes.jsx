@@ -23,7 +23,7 @@ function Votes({ votes, article_id }) {
         </p>
       )}
       <button className="vote-button" onClick={() => amendVotes(1)}>
-        Like 👍
+        👍Like 
       </button>
       <br />
       <span>votes: {votes + votesChange}</span>
