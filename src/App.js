@@ -21,16 +21,15 @@ function App() {
   return (
     <BrowserRouter>
       <div className="App" data-theme={theme}>
-        <button className="theme-button" onClick={switchTheme}>
-          Switch to {theme === "light" ? "Dark" : "Light"} Mode
-        </button>
-        <Header />
+        <Header theme={theme} switchTheme={switchTheme} />
         <Navbar />
         <div className="content">
-          <Routes>
-            <Route path="/" element={<ArticlesList />} />
-            <Route path="/articles/:article_id" element={<SingleArticle />} />
-          </Routes>
+          <div className="container">
+            <Routes>
+              <Route path="/" element={<ArticlesList />} />
+              <Route path="/articles/:article_id" element={<SingleArticle />} />
+            </Routes>
+          </div>
         </div>
       </div>
     </BrowserRouter>

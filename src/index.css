@@ -28,21 +28,33 @@
   text-decoration: none;
 }
 
+html,
+body {
+  height: 100vh;
+}
+
+#root {
+  min-height: 100%;
+}
+
+.container {
+  width: 1024px;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 1024px) {
+  .container {
+    width: 100%;
+  }
+}
+
 .loading-message {
   text-align: center;
   font-size: 1.5rem;
 }
 
-h1 {
-  text-align: center;
-  font-size: 3rem;
-  margin-bottom: 1rem;
-}
-
 /* content styles */
 .content {
-  max-width: 600px;
-  margin: 40px auto;
   padding: 20px;
 }
 
@@ -63,30 +75,6 @@ h1 {
   margin-bottom: 8px;
 }
 
-/* Navbar styles */
-
-.navbar {
-  padding: 10px;
-  display: flex;
-  align-items: center;
-  max-width: 600px;
-  margin: 0 auto;
-  border-bottom: 1px solid #f2f2f2;
-}
-
-.navbar .links {
-  text-align: center;
-  text-transform: capitalize;
-}
-.navbar a {
-  margin-left: 16px;
-  text-decoration: none;
-  padding: 6px;
-}
-.navbar a:hover {
-  color: #f1356d;
-}
-
 /* Single article styles */
 
 .single-article h2 {
@@ -98,6 +86,7 @@ h1 {
   box-shadow: var(--box-shadow) 0px 1px 4px;
   padding: 0.9rem;
   background-color: var(--body-background-colour);
+  font-size: 18px; line-height: 32px; margin: 0 0 24px;
 }
 
 .single-article p {
@@ -114,15 +103,17 @@ h1 {
   padding: 0.5rem;
   border-radius: 10px;
   background-color: var(--body-background-colour);
+  width: 100%;
 }
 
 .comments-header {
   margin-bottom: 20px;
 }
 .comment-body {
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   margin-right: 1rem;
   margin-left: 10px;
+
 }
 
 .comment-author {
@@ -153,16 +144,19 @@ h1 {
   transition: all 0.5s;
 }
 
+.vote {
+  font-size: 0.75rem;
+}
+
 .vote .vote-button {
   background-color: var(--button-background-colour);
   border: 0;
-  border-radius: 0.5rem;
+  border-radius: 0.9rem;
   box-sizing: border-box;
   color: #111827;
-  font-size: 0.875rem;
-  font-weight: 600;
-  line-height: 1.25rem;
-  padding: 0.75rem 1rem;
+  font-size: 0.5rem;
+  font-weight: 700;
+  padding: 0.3rem 0.4rem;
   text-align: center;
   text-decoration: none #d1d5db solid;
   text-decoration-thickness: auto;
@@ -171,7 +165,8 @@ h1 {
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
-  width: 70px;
+  height: fit-content;
+  width: 50px;
 }
 
 .vote-button:hover {

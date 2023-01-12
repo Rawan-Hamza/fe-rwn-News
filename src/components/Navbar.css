@@ -1,0 +1,24 @@
+.navbar {
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #f2f2f2;
+  margin-bottom: 2rem;
+}
+
+.navbar .container {
+    display: flex;
+    align-items: center;
+}
+
+.navbar .links {
+  text-transform: capitalize;
+}
+.navbar a {
+  margin-right: 1rem;
+  text-decoration: none;
+  padding: 6px;
+}
+.navbar a:hover {
+  color: #f1356d;
+}

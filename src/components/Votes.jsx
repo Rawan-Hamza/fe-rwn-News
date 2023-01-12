@@ -7,29 +7,25 @@ function Votes({ votes, article_id }) {
 
   const amendVotes = (num) => {
     setVotesChange((currentVotesChange) => currentVotesChange + num);
-    patchArticlesById(article_id, num).catch((err) => {
+    patchArticlesById(article_id, num)
+    .catch((err) => {
       setError(true);
       setVotesChange((currentVotesChange) => {
         return currentVotesChange - num;
       });
-    });
+    })
+    // .finally(() => setError(false))
   };
 
   return (
     <div className="vote">
-      {error && (
-        <p className="error-message">
-          something went wrong couldnt submit vote
-        </p>
-      )}
+      
       <button className="vote-button" onClick={() => amendVotes(1)}>
-        👍Like 
+        👍 Like 
       </button>
-      <br />
       <span>votes: {votes + votesChange}</span>
-      <br />
       <button className="vote-button" onClick={() => amendVotes(-1)}>
-        Dislike👎
+        Dislike 👎
       </button>
     </div>
   );
