@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { fetchTopics } from "./Api";
+import "./Navbar.css";
 
 const Navbar = () => {
   const [topics, setTopics] = useState([]);
@@ -10,17 +11,20 @@ const Navbar = () => {
       setTopics(topics);
     });
   }, []);
+
   return (
     <nav className="navbar">
-      <Link to="/">Home</Link>
-      <div className="links">
-        {topics.map((topic) => {
-          return (
-            <Link key={topic.slug} to={"/" + topic.slug}>
-              {topic.slug}
-            </Link>
-          );
-        })}
+      <div className="container">
+        <Link to="/">Home</Link>
+        <div className="links">
+          {topics.map((topic) => {
+            return (
+              <Link key={topic.slug} to={"/" + topic.slug}>
+                {topic.slug}
+              </Link>
+            );
+          })}
+        </div>
       </div>
     </nav>
   );

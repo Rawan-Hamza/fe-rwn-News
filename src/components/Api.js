@@ -23,7 +23,17 @@ export const fetchArticleById = (article_id) => {
 };
 
 export const fetchComments = (article_id) => {
-  return fromApi.get(`articles/${article_id}/comments`).then ((res) => {
-    return res.data
-  })
-}
+  return fromApi.get(`/articles/${article_id}/comments`).then((res) => {
+    return res.data;
+  });
+};
+
+export const patchArticlesById = (article_id, increment) => {
+  return fromApi
+    .patch(`/articles/${article_id}`, {
+      inc_votes: increment,
+    })
+    .then((res) => {
+      return res.data;
+    });
+};
