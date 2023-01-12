@@ -14,7 +14,7 @@ const SingleArticle = () => {
       setArticle(data.article);
       setIsLoading(false);
     });
-  }, []);
+  }, [article_id]);
 
   if (isLoading) return <p className="loading-message">Loading ...</p>;
   return (

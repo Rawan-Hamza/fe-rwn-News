@@ -1,9 +1,30 @@
 @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap");
 
+:root {
+  --background: white;
+  --text-primary: #333;
+  --text-secondary: #f1356d;
+  --accent: purple;
+  --box-shadow: rgba(0, 0, 0, 0.1);
+  --button-background-colour: rgb(238, 238, 238);
+  --button-hover-colour: rgb(249, 250, 251);
+  --body-background-colour: #edf0e9;
+}
+[data-theme="dark"] {
+  --background: #121212;
+  --text-primary: white;
+  --text-secondary: #f1356d;
+  --accent: darkred;
+  --box-shadow: rgb(180, 180, 180);
+  --button-background-colour: rgb(66, 66, 66);
+  --button-hover-colour: rgb(95, 95, 95);
+  --body-background-colour: #1f1b24;
+}
+
 * {
   margin: 0;
   font-family: "Quicksand";
-  color: #333;
+  color: var(--text-primary);
   text-decoration: none;
 }
 
@@ -15,6 +36,7 @@
 h1 {
   text-align: center;
   font-size: 3rem;
+  margin-bottom: 1rem;
 }
 
 /* content styles */
@@ -29,21 +51,22 @@ h1 {
 .article-preview {
   padding: 10px 16px;
   margin: 20px 0;
-  border-bottom: 1px solid #fafafa;
+  border-radius: 10px;
 }
 .article-preview:hover {
-  box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--box-shadow) 0px 1px 4px;
+  background-color: var(--body-background-colour);
 }
 .article-preview h2 {
   font-size: 17px;
-  color: #f1356d;
+  color: var(--text-secondary);
   margin-bottom: 8px;
 }
 
 /* Navbar styles */
 
 .navbar {
-  padding: 20px;
+  padding: 10px;
   display: flex;
   align-items: center;
   max-width: 600px;
@@ -72,8 +95,9 @@ h1 {
 }
 
 .article-body {
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  box-shadow: var(--box-shadow) 0px 1px 4px;
   padding: 0.9rem;
+  background-color: var(--body-background-colour);
 }
 
 .single-article p {
@@ -83,13 +107,13 @@ h1 {
 /* comments styles */
 .comments {
   overflow-y: auto;
-  height: 400px;
+  min-height: 100%;
+  max-height: 400px;
   overscroll-behavior: contain;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
-    rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
-  /*box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;*/
+  box-shadow: var(--box-shadow) 0px 1px 4px;
   padding: 0.5rem;
   border-radius: 10px;
+  background-color: var(--body-background-colour);
 }
 
 .comments-header {
@@ -120,8 +144,17 @@ h1 {
 }
 /* button styles */
 
+.theme-button {
+  color: var(--text-primary);
+  background-color: var(--background);
+  border: 2px var(--text-primary) solid;
+  border-radius: 10px;
+  float: right;
+  transition: all 0.5s;
+}
+
 .vote .vote-button {
-  background-color: #ffffff;
+  background-color: var(--button-background-colour);
   border: 0;
   border-radius: 0.5rem;
   box-sizing: border-box;
@@ -142,7 +175,7 @@ h1 {
 }
 
 .vote-button:hover {
-  background-color: rgb(249, 250, 251);
+  background-color: var(--button-hover-colour);
 }
 
 .vote-button:focus {
