@@ -86,7 +86,9 @@ body {
   box-shadow: var(--box-shadow) 0px 1px 4px;
   padding: 0.9rem;
   background-color: var(--body-background-colour);
-  font-size: 18px; line-height: 32px; margin: 0 0 24px;
+  font-size: 18px;
+  line-height: 32px;
+  margin: 0 0 24px;
 }
 
 .single-article p {
@@ -113,7 +115,6 @@ body {
   font-size: 0.9rem;
   margin-right: 1rem;
   margin-left: 10px;
-
 }
 
 .comment-author {
@@ -145,7 +146,7 @@ body {
 }
 
 .vote {
-  font-size: 0.75rem;
+  font-size: 0.8rem;
 }
 
 .vote .vote-button {
@@ -154,9 +155,9 @@ body {
   border-radius: 0.9rem;
   box-sizing: border-box;
   color: #111827;
-  font-size: 0.5rem;
-  font-weight: 700;
-  padding: 0.3rem 0.4rem;
+  font-size: 0.7rem;
+  font-weight: 650;
+  padding: 0.4rem 0.5rem;
   text-align: center;
   text-decoration: none #d1d5db solid;
   text-decoration-thickness: auto;
@@ -166,7 +167,7 @@ body {
   -webkit-user-select: none;
   touch-action: manipulation;
   height: fit-content;
-  width: 50px;
+  width: 70px;
 }
 
 .vote-button:hover {
@@ -180,4 +181,13 @@ body {
 
 .vote-button:focus-visible {
   box-shadow: none;
+  background-color: #f1356d;
+}
+
+.vote-button:disabled {
+  background-color: #f0b2b2;
+}
+
+.vote-button:active {
+  background: #f1356d;
 }
