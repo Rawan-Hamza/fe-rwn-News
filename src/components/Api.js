@@ -37,3 +37,20 @@ export const patchArticlesById = (article_id, increment) => {
       return res.data;
     });
 };
+
+export const postComment = ({ article_id, body, username = "grumpy19" }) => {
+  const postBody = {
+    article_id,
+    username,
+    body,
+  };
+
+  return fromApi
+    .post(`/articles/${article_id}/comments`, postBody)
+    .then(({ data }) => {
+      return data.addedComment;
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+};

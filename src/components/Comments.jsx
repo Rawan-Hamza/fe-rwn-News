@@ -1,9 +1,12 @@
 import { useEffect, useState } from "react";
 import { fetchComments } from "./Api";
+import CommentAdder from "./CommentAdder";
 
 const Comments = ({ article_id }) => {
   const [comments, setComments] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [btnPress, setBtnPress] = useState(false)
+  
   useEffect(() => {
     fetchComments(article_id).then((data) => {
       setComments(data.comments);
@@ -13,12 +16,14 @@ const Comments = ({ article_id }) => {
 
   return (
     <div>
-      <div className="comments-header">
+      <header className="comments-header">
         <h3>Comments:</h3>
-      </div>
-      <div className="comments">
-        {!comments && <p>This article has no comments yet</p>}
-        {isLoading && <p>is Loading...</p>}
+        <button className="post-comment" onClick={() => setBtnPress(true)}>Comment on this article</button>
+        {btnPress && <CommentAdder setComments={setComments} article_id={article_id}/>}
+      </header>
+      <main className="comments">
+        {!comments && <p key='no-comment-tag'>This article has no comments yet</p>}
+        {isLoading && <p key='isLoading-tag'>is Loading...</p>}
         {comments &&
           comments.map((comment) => (
             <div key={comment.id} className="comment">
@@ -26,7 +31,7 @@ const Comments = ({ article_id }) => {
               <p className="comment-body">{comment.body}</p>
             </div>
           ))}
-      </div>
+      </main>
     </div>
   );
 };
