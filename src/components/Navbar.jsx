@@ -19,7 +19,7 @@ const Navbar = () => {
         <div className="links">
           {topics.map((topic) => {
             return (
-              <Link key={topic.slug} to={"/" + topic.slug}>
+              <Link key={topic.slug} to={"/topics/" + topic.slug}>
                 {topic.slug}
               </Link>
             );
