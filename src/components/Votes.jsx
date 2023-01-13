@@ -8,8 +8,6 @@ function Votes({ votes, article_id }) {
   const onBtnClick = (btnRef) => {
     if (btnRef.current) {
       btnRef.current.setAttribute("disabled", "disabled");
-    } else {
-      btnRef.current.setAttribute("enabled", "enabled");
     }
   };
   const amendVotes = (num) => {

@@ -4,8 +4,10 @@ const fromApi = axios.create({
   baseURL: "https://rwn-news.onrender.com/api",
 });
 
-export const fetchArticles = () => {
-  return fromApi.get(`/articles`).then((res) => {
+export const fetchArticles = (topic) => {
+  return fromApi.get(`/articles` , {
+    params: { topic }
+  }).then((res) => {
     return res.data;
   });
 };
@@ -35,5 +37,22 @@ export const patchArticlesById = (article_id, increment) => {
     })
     .then((res) => {
       return res.data;
+    });
+};
+
+export const postComment = ({ article_id, body, username = "grumpy19" }) => {
+  const postBody = {
+    article_id,
+    username,
+    body,
+  };
+
+  return fromApi
+    .post(`/articles/${article_id}/comments`, postBody)
+    .then(({ data }) => {
+      return data.addedComment;
+    })
+    .catch((err) => {
+      console.log(err);
     });
 };
