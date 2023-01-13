@@ -18,7 +18,7 @@ const Comments = ({ article_id }) => {
     <div>
       <header className="comments-header">
         <h3>Comments:</h3>
-        <button className="post-comment" onClick={() => setBtnPress(true)}>Comment on this article</button>
+        <button className="post-comment" onClick={() => setBtnPress(prevState => !prevState)}>Comment on this article</button>
         {btnPress && <CommentAdder setComments={setComments} article_id={article_id}/>}
       </header>
       <main className="comments">

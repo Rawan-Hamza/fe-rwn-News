@@ -7,7 +7,13 @@ const CommentAdder = ({ setComments, article_id }) => {
   const [error, setError] = useState(null);
 
   const handleSubmit = (e) => {
+    if (newCommentText === '') {
+      e.preventDefault();
+      setError("can't post an empty comment")
+      return
+    }
     e.preventDefault();
+    setError(null);
     setIsLoading(true);
     const newComment = {
       body: newCommentText,
@@ -29,17 +35,17 @@ const CommentAdder = ({ setComments, article_id }) => {
 
   return (
     <main>
-      {error && <p className="error-message">oops, something went wrong</p>}
       {!error && isLoading && (
         <p className="posting-comment">posting comment...</p>
-      )}
-      {!error && !isLoading && (
+        )}
+      {!isLoading && (
         <form className="Comment-adder" onSubmit={handleSubmit}>
           <label htmlFor="newComment">Type comment here:</label>
           <textarea
             id="newComment"
             value={newCommentText}
             onChange={(e) => setNewCommentText(e.target.value)}></textarea>
+            {error && <p className="error-message">{error}</p>}
           <button className="post-comment">Post comment</button>
         </form>
       )}

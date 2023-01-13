@@ -44,6 +44,7 @@ textarea {
   width: 100%;
   margin-right: 2rem;
   margin-bottom: 0.5rem;
+  resize: none;
 }
 
 .post-comment {
