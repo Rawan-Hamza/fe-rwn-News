@@ -4,9 +4,9 @@ const fromApi = axios.create({
   baseURL: "https://rwn-news.onrender.com/api",
 });
 
-export const fetchArticles = (topic) => {
+export const fetchArticles = (topic, sortBy, orderBy) => {
   return fromApi.get(`/articles` , {
-    params: { topic }
+    params: { topic, sort_by: sortBy, order: orderBy }
   }).then((res) => {
     return res.data;
   });
