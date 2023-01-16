@@ -125,7 +125,7 @@ li h2 {
 }
 /* button styles */
 
-.theme-button {
+.theme-button, .order, select {
   color: var(--text-primary);
   background-color: var(--background);
   border: 2px var(--text-primary) solid;
@@ -187,4 +187,10 @@ li h2 {
 
 .post-comment {
   width: 90px;
+}
+
+.sorting-tools {
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
 }
