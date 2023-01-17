@@ -5,11 +5,13 @@ const fromApi = axios.create({
 });
 
 export const fetchArticles = (topic, sortBy, orderBy) => {
-  return fromApi.get(`/articles` , {
-    params: { topic, sort_by: sortBy, order: orderBy }
-  }).then((res) => {
-    return res.data;
-  });
+  return fromApi
+    .get(`/articles`, {
+      params: { topic, sort_by: sortBy, order: orderBy },
+    })
+    .then((res) => {
+      return res.data;
+    });
 };
 
 export const fetchTopics = () => {
@@ -51,6 +53,24 @@ export const postComment = ({ article_id, body, username = "grumpy19" }) => {
     .post(`/articles/${article_id}/comments`, postBody)
     .then(({ data }) => {
       return data.addedComment;
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+};
+
+export const getUsers = () => {
+  return fromApi.get("/users").then((res) => {
+    return res.data;
+  });
+};
+
+export const removeComments = (article_id, comment_id) => {
+  console.log(article_id, comment_id);
+  return fromApi
+    .delete(`/articles/${article_id}/comments/${comment_id}`)
+    .then((res) => {
+      return res.data;
     })
     .catch((err) => {
       console.log(err);

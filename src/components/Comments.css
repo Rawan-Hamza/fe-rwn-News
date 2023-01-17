@@ -50,3 +50,13 @@ textarea {
 .post-comment {
   margin-bottom: 1rem;
 }
+
+.comment span {
+  display: flex;
+}
+
+.comment span button {
+  color: var(--text-primary);
+  background-color: var(--body-background-colour);
+  height: 30px;
+}

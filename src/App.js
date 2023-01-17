@@ -1,10 +1,13 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import useLocalStorage from "use-local-storage";
-import "./App.css";
 import ArticlesList from "./components/ArticlesList";
 import Header from "./components/Header";
 import Navbar from "./components/Navbar";
 import SingleArticle from "./components/SingleArticle";
+import Users from "./components/Users";
+import useLocalStorage from "use-local-storage";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { UserContext } from "./contexts/User";
+import { useContext } from "react";
+import "./App.css";
 
 function App() {
   const defaultDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
@@ -12,7 +15,8 @@ function App() {
     "theme",
     defaultDark ? "dark" : "light"
   );
-
+  const userValue = useContext(UserContext);
+  console.log(userValue);
   const switchTheme = () => {
     const newTheme = theme === "light" ? "dark" : "light";
     setTheme(newTheme);
@@ -27,6 +31,7 @@ function App() {
           <div className="container">
             <Routes>
               <Route path="/" element={<ArticlesList />} />
+              <Route path="/users" element={<Users />} />
               <Route path="/articles/:article_id" element={<SingleArticle />} />
               <Route path="/topics/:topic" element={<ArticlesList />} />
             </Routes>
