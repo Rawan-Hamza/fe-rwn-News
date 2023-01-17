@@ -8,7 +8,6 @@ const Comments = ({ article_id }) => {
   const [btnPress, setBtnPress] = useState(false);
 
   useEffect(() => {
-    console.log("ive ran");
     fetchComments(article_id).then((data) => {
       setComments(data.comments);
       setIsLoading(false);
