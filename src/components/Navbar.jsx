@@ -25,6 +25,7 @@ const Navbar = () => {
             );
           })}
         </div>
+        <Link to="/users">Users</Link>
       </div>
     </nav>
   );

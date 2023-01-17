@@ -1,0 +1,11 @@
+.user-list .User_card {
+  display: inline-block;
+  margin: 30px, 30px;
+  align-items: center;
+  text-align: center;
+}
+
+#user-avatar {
+  height: 100px;
+  width: 100px;
+}

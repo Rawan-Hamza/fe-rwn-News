@@ -1,16 +1,17 @@
 import { useState } from "react";
 import { postComment } from "./Api";
 import "./Comments.css";
+
 const CommentAdder = ({ setComments, article_id }) => {
   const [newCommentText, setNewCommentText] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
 
   const handleSubmit = (e) => {
-    if (newCommentText === '') {
+    if (newCommentText === "") {
       e.preventDefault();
-      setError("can't post an empty comment")
-      return
+      setError("can't post an empty comment");
+      return;
     }
     e.preventDefault();
     setError(null);
@@ -37,7 +38,7 @@ const CommentAdder = ({ setComments, article_id }) => {
     <main>
       {!error && isLoading && (
         <p className="posting-comment">posting comment...</p>
-        )}
+      )}
       {!isLoading && (
         <form className="Comment-adder" onSubmit={handleSubmit}>
           <label htmlFor="newComment">Type comment here:</label>
@@ -45,7 +46,7 @@ const CommentAdder = ({ setComments, article_id }) => {
             id="newComment"
             value={newCommentText}
             onChange={(e) => setNewCommentText(e.target.value)}></textarea>
-            {error && <p className="error-message">{error}</p>}
+          {error && <p className="error-message">{error}</p>}
           <button className="post-comment">Post comment</button>
         </form>
       )}
