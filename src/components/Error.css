@@ -1,0 +1,9 @@
+.error {
+text-align: center;
+}
+
+#error-photo {
+height: 400px;
+width: 600px;
+margin-bottom: 2rem;
+}

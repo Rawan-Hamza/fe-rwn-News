@@ -8,6 +8,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { UserContext } from "./contexts/User";
 import { useContext } from "react";
 import "./App.css";
+import Error from "./components/Error";
 
 function App() {
   const defaultDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
@@ -34,6 +35,7 @@ function App() {
               <Route path="/users" element={<Users />} />
               <Route path="/articles/:article_id" element={<SingleArticle />} />
               <Route path="/topics/:topic" element={<ArticlesList />} />
+              <Route path="/*" element={<Error />} />
             </Routes>
           </div>
         </div>
