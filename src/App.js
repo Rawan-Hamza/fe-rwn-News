@@ -16,8 +16,7 @@ function App() {
     "theme",
     defaultDark ? "dark" : "light"
   );
-  const userValue = useContext(UserContext);
-  console.log(userValue);
+
   const switchTheme = () => {
     const newTheme = theme === "light" ? "dark" : "light";
     setTheme(newTheme);
