@@ -16,7 +16,7 @@ function App() {
     "theme",
     defaultDark ? "dark" : "light"
   );
-
+  const user = useContext(UserContext);
   const switchTheme = () => {
     const newTheme = theme === "light" ? "dark" : "light";
     setTheme(newTheme);
@@ -32,7 +32,10 @@ function App() {
             <Routes>
               <Route path="/" element={<ArticlesList />} />
               <Route path="/users" element={<Users />} />
-              <Route path="/articles/:article_id" element={<SingleArticle />} />
+              <Route
+                path="/articles/:article_id"
+                element={<SingleArticle user={user} />}
+              />
               <Route path="/topics/:topic" element={<ArticlesList />} />
               <Route path="/*" element={<Error />} />
             </Routes>

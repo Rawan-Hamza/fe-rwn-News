@@ -2,11 +2,11 @@ import { useEffect, useState } from "react";
 import { fetchComments, removeComments } from "./Api";
 import CommentAdder from "./CommentAdder";
 
-const Comments = ({ article_id }) => {
+const Comments = ({ article_id, user }) => {
   const [comments, setComments] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [btnPress, setBtnPress] = useState(false);
-
+  const currentUser = user.user.username;
   useEffect(() => {
     fetchComments(article_id).then((data) => {
       setComments(data.comments);
@@ -50,11 +50,13 @@ const Comments = ({ article_id }) => {
               <h5 className="comment-author">{comment.author}</h5>
               <span>
                 <p className="comment-body">{comment.body}</p>
-                <button
-                  className="delete-comment"
-                  onClick={() => deleteComment(comment)}>
-                  ❌Delete
-                </button>
+                {currentUser === comment.author && (
+                  <button
+                    className="delete-comment"
+                    onClick={() => deleteComment(comment)}>
+                    ❌Delete
+                  </button>
+                )}
               </span>
             </div>
           ))}

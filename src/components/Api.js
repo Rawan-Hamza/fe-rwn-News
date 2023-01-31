@@ -66,7 +66,6 @@ export const getUsers = () => {
 };
 
 export const removeComments = (article_id, comment_id) => {
-  console.log(article_id, comment_id);
   return fromApi
     .delete(`/articles/${article_id}/comments/${comment_id}`)
     .then((res) => {
