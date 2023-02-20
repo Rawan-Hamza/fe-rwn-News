@@ -1,5 +1,4 @@
-import { useContext, useEffect, useState } from "react";
-import { UserContext } from "../contexts/User";
+import { useEffect, useState } from "react";
 import { getUsers } from "./Api";
 import "./Users.css";
 

@@ -15,3 +15,7 @@ header .container {
   width: 60px;
   border-radius: 50%;
 }
+
+.theme-button {
+  margin-right: 1rem;
+}

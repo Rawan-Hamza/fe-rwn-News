@@ -32,7 +32,7 @@ const ArticlesList = () => {
         setArticlesList(data);
       }
     });
-  }, [topic, sortBy, order]);
+  }, [topic, sortBy, orderBy]);
 
   if (isLoading) return <p className="loading-message">Loading ...</p>;
   return (

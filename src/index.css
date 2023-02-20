@@ -125,13 +125,14 @@ li h2 {
 }
 /* button styles */
 
-.theme-button, .order, select {
+.theme-button, .order, select, .delete-comment {
   color: var(--text-primary);
   background-color: var(--background);
   border: 2px var(--text-primary) solid;
   border-radius: 10px;
   float: right;
   transition: all 0.5s;
+  cursor: pointer;
 }
 
 .vote {

@@ -53,10 +53,9 @@ textarea {
 
 .comment span {
   display: flex;
+  justify-content: space-between;
 }
 
 .comment span button {
-  color: var(--text-primary);
-  background-color: var(--body-background-colour);
   height: 30px;
 }
