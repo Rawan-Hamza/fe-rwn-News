@@ -1,15 +1,36 @@
-import React, { useState, useRef } from "react";
+import React, { useState } from "react";
 import { patchArticlesById } from "./Api";
 
 function Votes({ votes, article_id }) {
+  const [hasVoted, setHasVoted] = useState(null);
   const [votesChange, setVotesChange] = useState(0);
-  let likeBtnRef = useRef();
-  let disLikeBtnRef = useRef();
-  const onBtnClick = (btnRef) => {
-    if (btnRef.current) {
-      btnRef.current.setAttribute("disabled", "disabled");
+
+  const handleUpVote = () => {
+    if (hasVoted === "like") {
+      setHasVoted(null);
+      amendVotes(-1);
+    } else {
+      setHasVoted("like");
+      if (hasVoted === "dislike") {
+        amendVotes(1);
+      }
+      amendVotes(1);
     }
   };
+
+  const handleDownVote = () => {
+    if (hasVoted === "dislike") {
+      setHasVoted(null);
+      amendVotes(1);
+    } else {
+      setHasVoted("dislike");
+      if (hasVoted === "like") {
+        amendVotes(-1);
+      }
+      amendVotes(-1);
+    }
+  };
+
   const amendVotes = (num) => {
     setVotesChange((currentVotesChange) => currentVotesChange + num);
     patchArticlesById(article_id, num).catch((err) => {
@@ -22,22 +43,18 @@ function Votes({ votes, article_id }) {
   return (
     <div className="vote">
       <button
-        ref={likeBtnRef}
-        className="vote-button"
-        onClick={() => {
-          onBtnClick(likeBtnRef);
-          amendVotes(1);
-        }}>
+        className={hasVoted === "like" ? "vote-button-active" : "vote-button"}
+        onClick={handleUpVote}
+      >
         👍 Like
       </button>
       <span> votes: {votes + votesChange} </span>
       <button
-        ref={disLikeBtnRef}
-        className="vote-button"
-        onClick={() => {
-          onBtnClick(disLikeBtnRef);
-          amendVotes(-1);
-        }}>
+        className={
+          hasVoted === "dislike" ? "vote-button-active" : "vote-button"
+        }
+        onClick={handleDownVote}
+      >
         Dislike 👎
       </button>
     </div>

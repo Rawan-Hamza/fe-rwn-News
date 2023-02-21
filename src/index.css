@@ -125,7 +125,10 @@ li h2 {
 }
 /* button styles */
 
-.theme-button, .order, select, .delete-comment {
+.theme-button,
+.order,
+select,
+.delete-comment {
   color: var(--text-primary);
   background-color: var(--background);
   border: 2px var(--text-primary) solid;
@@ -140,6 +143,7 @@ li h2 {
 }
 
 .vote .vote-button,
+.vote-button-active,
 .post-comment {
   background-color: var(--button-background-colour);
   border: 0;
@@ -166,7 +170,6 @@ li h2 {
   background-color: var(--button-hover-colour);
 }
 
-.vote-button:focus,
 .post-comment:focus {
   outline: 2px solid transparent;
   outline-offset: 2px;
@@ -178,11 +181,8 @@ li h2 {
   background-color: #f1356d;
 }
 
-.vote-button:disabled {
-  background-color: #f0b2b2;
-}
-
-.vote-button:active {
+.vote-button-active,
+.vote-button-active:hover {
   background: #f1356d;
 }
 
