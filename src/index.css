@@ -1,7 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap");
 
 :root {
-  --background: white;
+  background-image: linear-gradient(
+    174.2deg,
+    rgba(255, 244, 228, 1) 7.1%,
+    rgba(240, 246, 238, 1) 67.4%
+  );
+
   --text-primary: #333;
   --text-secondary: #f1356d;
   --accent: purple;
@@ -9,7 +14,7 @@
   --button-text-colour: #861235;
   --button-background-colour: rgb(238, 238, 238);
   --button-hover-colour: rgb(249, 250, 251);
-  --body-background-colour: #edf0e9;
+  --body-background-colour: #d8dfce;
 }
 [data-theme="dark"] {
   --background: #121212;
@@ -60,69 +65,6 @@ body {
   padding: 20px;
 }
 
-/* article list item styles */
-
-.articles-list {
-  list-style-type: none;
-  padding-left: 0;
-}
-
-li span {
-  display: flex;
-  align-self: flex-start;
-  align-items: center;
-  justify-content: flex-end;
-  align-content: stretch;
-  gap: 15px;
-}
-
-li {
-  padding: 10px 16px;
-  margin: 20px 0;
-  border-radius: 5px;
-}
-li:hover {
-  box-shadow: var(--box-shadow) 0px 1px 4px;
-  background-color: var(--body-background-colour);
-}
-li h2 {
-  font-size: 17px;
-  color: var(--text-secondary);
-  margin-bottom: 8px;
-}
-
-/* Single article styles */
-
-.single-article h2 {
-  margin-bottom: 20px;
-  color: #f1356d;
-}
-
-.article-body {
-  box-shadow: var(--box-shadow) 0px 1px 4px;
-  padding: 0.9rem;
-  background-color: var(--body-background-colour);
-  font-size: 18px;
-  line-height: 32px;
-  margin: 0 0 24px;
-}
-
-.single-article p {
-  margin-bottom: 40px;
-}
-
-/* vote styles */
-.vote {
-  display: block;
-  float: right;
-  text-align: center;
-  margin-left: 1.7rem;
-  margin-bottom: 2rem;
-}
-
-.error-message {
-  color: red;
-}
 /* button styles */
 
 .theme-button,
@@ -136,6 +78,8 @@ select,
   float: right;
   transition: all 0.5s;
   cursor: pointer;
+  font-size: 0.8rem;
+  font-weight: bold;
 }
 
 .vote {

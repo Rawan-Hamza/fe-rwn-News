@@ -1,0 +1,26 @@
+.single-article h2 {
+  font-size: 3rem;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #f1356d;
+}
+
+.article-body {
+  box-shadow: var(--box-shadow) 0px 1px 4px;
+  padding: 0.9rem;
+  background-color: var(--body-background-colour);
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 32px;
+  margin: 0 0 24px;
+  border-radius: 20px;
+}
+
+.single-article p {
+  margin-bottom: 40px;
+}
+
+.article-time {
+  font-weight: 500;
+  text-align: end;
+}

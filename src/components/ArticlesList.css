@@ -1,0 +1,33 @@
+.articles-list {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+li span {
+  display: flex;
+  align-self: flex-start;
+  align-items: center;
+  justify-content: flex-end;
+  align-content: stretch;
+  gap: 20px;
+}
+
+li {
+  padding: 10px 16px;
+  margin: 20px 0;
+  border-radius: 5px;
+}
+li:hover {
+  border-radius: 15px;
+  box-shadow: var(--box-shadow) 0px 1px 4px;
+  background-color: var(--body-background-colour);
+}
+li h2 {
+  font-size: 20px;
+  color: var(--text-secondary);
+  margin-bottom: 8px;
+}
+
+li h2:hover {
+  color: var(--text-primary);
+}

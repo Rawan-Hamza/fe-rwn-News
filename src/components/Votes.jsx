@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { patchArticlesById } from "./Api";
+import "./Votes.css";
 
 function Votes({ votes, article_id }) {
   const [hasVoted, setHasVoted] = useState(null);

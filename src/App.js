@@ -7,8 +7,8 @@ import useLocalStorage from "use-local-storage";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { UserContext } from "./contexts/User";
 import { useContext } from "react";
-import "./App.css";
 import Error from "./components/Error";
+import "./App.css";
 
 function App() {
   const defaultDark = window.matchMedia("(prefers-color-scheme: dark)").matches;

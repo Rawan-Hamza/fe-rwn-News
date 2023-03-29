@@ -1,6 +1,7 @@
 header h1 {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   text-align: center;
-  font-size: 3rem;
+  font-size: 5rem;
   margin-bottom: 1rem;
 }
 
@@ -16,6 +17,10 @@ header .container {
   border-radius: 50%;
 }
 
+.header-user p {
+  font-weight: bold;
+}
+
 .theme-button {
-  margin-right: 1rem;
+  margin-right: 1.5rem;
 }

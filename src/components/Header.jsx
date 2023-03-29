@@ -8,7 +8,7 @@ const Header = ({ theme, switchTheme }) => {
   return (
     <header>
       <Link to="/" className="header-link">
-        <h1>RWN News</h1>
+        <h1>RWN NEWS</h1>
       </Link>
       <div className="container">
         <button className="theme-button" onClick={switchTheme}>

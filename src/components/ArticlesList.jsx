@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { fetchArticles } from "./Api";
 import { Link, useParams } from "react-router-dom";
+import "./ArticlesList.css";
 
 const ArticlesList = () => {
   const [articlesList, setArticlesList] = useState([]);
@@ -54,8 +55,8 @@ const ArticlesList = () => {
           <Link to={"/articles/" + article.article_id}>
             <li className="article-preview" key={article.article_id}>
               <h2>{article.title}</h2>
+              <h5>written by {article.author}</h5>
               <span className="article-details">
-                <h5>written by {article.author}</h5>
                 <h6>{article.votes} votes</h6>
                 <h6>{article.comment_count} comments</h6>
               </span>

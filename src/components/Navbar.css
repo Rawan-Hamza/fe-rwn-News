@@ -15,6 +15,8 @@
   text-transform: capitalize;
 }
 .navbar a {
+  font-size: large;
+  font-weight: bold;
   margin-right: 1rem;
   text-decoration: none;
   padding: 6px;
