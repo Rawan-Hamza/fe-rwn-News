@@ -3,11 +3,21 @@
   padding-left: 0;
 }
 
-li span {
+.sort-by {
+  font-weight: bold;
+}
+
+.article-author {
+  display: flex;
+  align-items: flex-start;
+}
+
+
+li span, .article-metrics {
   display: flex;
   align-self: flex-start;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: space-between;
   align-content: stretch;
   gap: 20px;
 }
@@ -26,8 +36,4 @@ li h2 {
   font-size: 20px;
   color: var(--text-secondary);
   margin-bottom: 8px;
-}
-
-li h2:hover {
-  color: var(--text-primary);
 }

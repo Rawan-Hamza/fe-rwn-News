@@ -55,10 +55,14 @@ const ArticlesList = () => {
           <Link to={"/articles/" + article.article_id}>
             <li className="article-preview" key={article.article_id}>
               <h2>{article.title}</h2>
-              <h5>written by {article.author}</h5>
               <span className="article-details">
+              <div className="article-author">
+              <h5>written by {article.author}</h5>
+              </div>
+              <div className="article-metrics">
                 <h6>{article.votes} votes</h6>
                 <h6>{article.comment_count} comments</h6>
+              </div>
               </span>
             </li>
           </Link>
