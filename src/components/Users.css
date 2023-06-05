@@ -1,11 +1,19 @@
-.user-list .User_card {
-  display: inline-block;
+.user-list {
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
   margin: 30px, 30px;
   align-items: center;
   text-align: center;
 }
 
+.user-card {
+  font-size: large;
+  font-weight: bold;
+}
+
 #user-avatar {
-  height: 100px;
-  width: 100px;
+  border-radius: 50%;
+  height: 150px;
+  width: 150px;
 }
