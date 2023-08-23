@@ -3,6 +3,9 @@ header h1 {
   text-align: center;
   font-size: 5rem;
   margin-bottom: 1rem;
+  @media screen and (max-width: 412px) {
+    font-size: 3.5rem;
+  }
 }
 
 header .container {

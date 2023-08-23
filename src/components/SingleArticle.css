@@ -1,8 +1,11 @@
 .single-article h2 {
-  font-size: 3rem;
-  text-align: center;
+  font-size: 2.5rem;
+  text-align: start;
   margin-bottom: 20px;
   color: #f1356d;
+  @media screen and (max-width: 412px) {
+      font-size: 1.5rem;
+  }
 }
 
 .article-body {
@@ -10,10 +13,13 @@
   padding: 0.9rem;
   background-color: var(--body-background-colour);
   font-size: 20px;
-  font-weight: 500;
-  line-height: 32px;
+  font-weight: 400;
+  line-height: 25.5px;
   margin: 0 0 24px;
   border-radius: 20px;
+  @media screen and (max-width: 412px) {
+    font-size: 1rem;
+}
 }
 
 .single-article p {
