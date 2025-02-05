@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const fromApi = axios.create({
-  baseURL: "https://news-api.rawanhamza.com",
+  baseURL: "https://rwn-news.onrender.com/api",
 });
 
 export const fetchArticles = (topic, sortBy, orderBy) => {
